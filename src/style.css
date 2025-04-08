@@ -1,4 +1,20 @@
-h1{
-    color:blue;
-    font-size: 50px;
+body{
+    background-color: rgb(202, 198, 230);
 }
+
+#container{
+padding: 30px;
+    width: 768px; 
+    margin: 0 auto;
+    background-color: white;
+}
+
+h1{
+font-size: 24px;
+}
+.img1,.img2{
+    width: 50%;
+    
+    
+}
+
