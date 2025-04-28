@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        span{
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        span:hover{
+            color:chocolate;
+            
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- HTML DON分頁效果 -->
+    <div>
+        <span onclick="changeToAbout();">ABOUT </span>
+        <span onclick="changeToNews();">NEWS </span>
+
+    </div>
+    <hr>
+
+    <div id="about">我是一杯拿鐵</div>
+    <div id="news" style="display:none;">我是最新商品</div>
+
+    <script>
+        function changeToNews(){
+            // 隱藏about
+            let about=document.querySelector("#about");
+            about.style.display="none";
+
+            // 顯示news
+            let news=document.querySelector("#news");
+            news.style.display="block";
+        }
+        function changeToAbout(){
+            // 顯示about
+            let about=document.querySelector("#about");
+            about.style.display="block";
+
+            // 顯示news
+            let news=document.querySelector("#news");
+            news.style.display="none";
+        }
+    </script>
+
+</body>
+
+</html>

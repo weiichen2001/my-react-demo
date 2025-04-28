@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAPPY HOSHI DAY 2025</title>
+</head>
+
+<body>
+    <button id="btn1">跳轉頁面</button>
+    <script>
+        //window物件
+        // console.log(window);
+
+        // 常用方法(用括號)
+        // 1.訊息視窗
+        // window.alert("訊息視窗"); /* 也可以只打alert省略window */
+
+        // 2.輸入視窗("提示名稱","預設值")
+        // window.prompt("請輸入任意數","100");
+
+
+        // 常用屬性(用等於)
+        // 寬度(調整寬度後也會跟著變動)
+        console.log(`視窗目前寬度${window.innerWidth}`);
+        // 高度
+        console.log(`視窗目前高度${window.innerHeight}`);
+
+        // screen物件是window物件的一個屬性
+        // 寬度
+        console.log(`螢幕寬度${window.screen.width}`);
+        // 高度
+        console.log(`螢幕高度${window.screen.height}`);
+
+
+        // document物件
+        // 顯示資料畫面
+        // document.write("Hello");
+
+        // 取得title
+        document.write(document.title);
+        // 更新網頁標題
+        document.title = "我是拿鐵"
+        document.write(document.title);
+
+
+        // 取得body內容
+        console.log(document.body);
+
+        // 取得網址
+        console.log(window.location.href);
+        // 更改網址
+        // window.location.href="https://drive.google.com/file/d/1LZ6k1uaK2lGU22iu1rhAlKITnHO9FPdn/view";
+
+        document.querySelector("#btn1").addEventListener('click', () => {
+            window.location.href = "https://drive.google.com/file/d/1LZ6k1uaK2lGU22iu1rhAlKITnHO9FPdn/view";
+        })
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

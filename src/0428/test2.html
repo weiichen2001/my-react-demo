@@ -1,0 +1,49 @@
+<!-- chatgpt寫的檔案 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id="page1">我是第一頁</div>
+<div id="page2" style="display:none;">我是第二頁</div>
+<div id="page3" style="display:none;">我是第三頁</div>
+
+<button id="previous" style="display:none;" onclick="changeToPrevious()">上一步</button>
+<button id="next" onclick="changeToNext()">下一步</button>
+
+<script>
+    let currentPage = 1; // 記錄現在是第幾頁
+
+    function showPage() {
+        document.querySelector("#page1").style.display = (currentPage === 1) ? "block" : "none";
+        document.querySelector("#page2").style.display = (currentPage === 2) ? "block" : "none";
+        document.querySelector("#page3").style.display = (currentPage === 3) ? "block" : "none";
+
+        // 控制按鈕顯示
+        document.querySelector("#previous").style.display = (currentPage === 1) ? "none" : "inline-block";
+        document.querySelector("#next").style.display = (currentPage === 3) ? "none" : "inline-block";
+    }
+
+    function changeToNext() {
+        if (currentPage < 3) {
+            currentPage++;
+            showPage();
+        }
+    }
+
+    function changeToPrevious() {
+        if (currentPage > 1) {
+            currentPage--;
+            showPage();
+        }
+    }
+
+    showPage(); // 初始化一次
+</script>
+</body>
+</html>

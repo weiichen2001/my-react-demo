@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="page1">我是第一頁</div>
+    <div id="page2" style="display:none;">我是第二頁</div>
+    <div id="page3" style="display:none;">我是第三頁</div>
+
+    <button id="previous" style="display:none;" onclick="changeToPrevious();">上一步</button>
+    <button id="next" onclick="changeToNext()">下一步</button>
+
+    <script>
+        // 設定一個變數紀錄現在的頁數，預設第一頁
+        let currentPage = 1;
+
+        function showPage() {
+            let page1 = document.querySelector("#page1");
+            let page2 = document.querySelector("#page2");
+            let page3 = document.querySelector("#page3");
+            let btn1= document.querySelector("#previous");
+            let btn2= document.querySelector("#next");
+
+            if (currentPage == 1) {
+                page1.style.display = "block";
+                page2.style.display = "none";
+                page3.style.display = "none";
+                btn1.style.display = "none";
+                btn2.style.display = "block";
+            }
+            if (currentPage == 2) {
+                page1.style.display = "none";
+                page2.style.display = "block";
+                page3.style.display = "none";
+                btn1.style.display = "block";
+                btn2.style.display = "block";
+            }
+            
+            if (currentPage == 3) {
+                page1.style.display = "none";
+                page2.style.display = "none";
+                page3.style.display = "block";
+                btn1.style.display = "block";
+                btn2.style.display = "none";
+            }
+        }
+
+        function changeToNext(){
+            if (currentPage<3){
+                currentPage++;
+                showPage();
+            }
+        }
+
+        function changeToPrevious(){
+            if (currentPage>1){
+                currentPage--;
+                showPage();
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
