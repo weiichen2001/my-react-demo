@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>
+        滑鼠常見事件
+        <ui>
+            <li>click:左鍵一下</li>
+            <li>dblclick:左鍵兩下</li>
+            <li>mousedown:按下滑鼠時</li>
+            <li>mouseup:放開滑鼠時</li>
+            <li style="color: red;">mouseover:滑鼠經過時</li>
+            <li style="color: red;">mouseout:滑鼠離開時</li>
+            <li style="color: green;">mouseenter:滑鼠進入時</li>
+            <li style="color: green;">mouseleave:滑鼠離開時</li>
+            <li>mousemove:滑鼠移動時</li>
+            <li>mousewheel:滾動滑鼠滾輪時</li>
+        </ui>
+    </h2>
+    <hr>
+    <h2>取得滑鼠游標位置 <span id="xy"></span> </h2>
+
+    <img src="../../public/images/ikea-restaurant.jpeg" alt="" width="200" id="photo1">
+    <script>
+        // 網頁中任何一個位置的座標
+
+        // document.addEventListener("mousemove",(e)=>{
+        //      document.getElementById("xy").textContent = `${e.clientX},${e.clientY}`
+        // });
+
+        // // 取得photo1圖片內的座標(client:以視窗左上角為起始點)
+        let photo1 = document.getElementById("photo1");
+        // photo1.addEventListener("mousemove", (e) => {
+        //     document.getElementById("xy").textContent = ` mousemove:${e.clientX},${e.clientY}`
+        // });
+
+        // // 取得photo1圖片內的座標(offset:以圖片左上角為起始點)
+        // photo1.addEventListener("click", (e) => {
+        //     document.getElementById("xy").textContent = ` click:${e.offsetX},${e.offsetY}`
+        // })
+
+        // // 取得photo1圖片內的座標(page:以頁面左上角為起始點)
+        // photo1.addEventListener("dblclick", (e) => {
+        //     document.getElementById("xy").textContent = ` dblclick:${e.pageX},${e.pageY}`
+        // })
+
+
+        photo1.addEventListener("click", (e) => {
+            document.getElementById("xy").innerHTML = ` <br>
+            ClientX:${e.clientX},ClientY${e.clientY}<br>
+            pageX:${e.pageX},pageY:${e.pageY}<br>
+            offsetX:${e.offsetX},offsetY:${e.offsetY}<br>
+            screenX:${e.screenX},screenY:${e.screenY}<br>
+            X:${e.x},Y:${e.y}<br>`;
+            
+        })
+
+
+
+    </script>
+    <img src="../../public/images/banner.jpg" alt="" width="200" id="photo2">
+    <script>
+        let photo2 = document.getElementById("photo2");
+        photo2.addEventListener("click", (e) => {
+            let curX = e.clientX;
+            let curY = e.clientY;
+
+            document.getElementById("xy").textContent = `${e.clientX},${e.clientY}`
+            console.log(curX, curY);
+        });
+    </script>
+</body>
+
+</html>
