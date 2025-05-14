@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文字輪播</title>
+    <link rel="stylesheet" href="./css/textslider.css">
+    <style>
+        #wrapper{
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .slideText{
+            height: 1.3em;
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrapper">
+        <h1>文字輪播</h1><hr>
+        <!-- HTML跑馬燈 -->
+         <marquee behavior="" direction="left" style="width: 300px;background-color: bisque;">
+            會動的字
+         </marquee>
+
+         <div class="slideText">
+            <ul>
+                <li>news1</li>
+                <li>news2</li>
+                <li>news3</li>
+                <li>news4</li>
+                <li>news5</li>
+                <li>news6</li>
+                <li>news7</li>
+                <li>news8</li>
+                <li>news9</li>
+            </ul>
+         </div>
+    </div>
+
+    <script src="./js/jquery-1.11.3.min.js"></script>
+    <script src="./js/jquery.textslider.js"></script>
+    <script>
+        $(function(){
+            $('.slideText').textslider({
+                // 捲動方向
+                direction:'scrollDown',
+                // 捲動速度
+                scrollSpeed:500,
+                // 捲動行數(=顯示的行數)
+                // 停留時間
+
+
+            });
+        });
+
+    </script>
+    
+</body>
+</html>
